@@ -2,8 +2,10 @@ from flask import Flask, request
 from flask_restful import Api, Resource
 import pandas as pd
 
+
 app = Flask(__name__)
 api = Api(app)
+
 
 class Users(Resource):
     def get(self):
