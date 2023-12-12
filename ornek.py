@@ -14,9 +14,9 @@ class Users(Resource):
     def post(self):
         json = request.get_json()
         req_data = pd.DataFrame({
-            'name'      : [json['name']],
-            'age'       : [json['age']],
-            'city'      : [json['city']]
+            'name'      : ['name'],
+            'age'       : ['age'],
+            'city'      : ['city']
         })
         data = pd.read_csv('users.csv')
         data = pd.concat([data, req_data], ignore_index=True)
