@@ -12,7 +12,9 @@ class Users(Resource):
         return {'data' : data}, 200
 
     def post(self):
-        json = request.get_json()
+        json = request.args["name"]
+        json = request.args["age"]
+        json = request.args["city"]
         req_data = pd.DataFrame({
             'name'      : ['name'],
             'age'       : ['age'],
