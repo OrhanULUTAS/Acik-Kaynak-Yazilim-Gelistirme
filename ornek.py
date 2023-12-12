@@ -19,9 +19,10 @@ class Users(Resource):
             'city'      : ['city']
         })
         data = pd.read_csv('users.csv')
-        data = pd.concat([data, req_data], ignore_index=True)
-        data.to_csv('users.csv', index=False)
-        return {'message' : 'Record successfully added.'}, 200
+        #data = pd.concat([data, req_data], ignore_index=True)
+        data = data.append(req_data, ignore_index=True)
+        data.to_csv('kullanici.csv', index=False)
+        return {'message' : 'Record successfully added.'}, 201
 
     def delete(self):
         name = request.args['name']
